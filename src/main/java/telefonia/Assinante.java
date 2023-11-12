@@ -17,4 +17,18 @@ public class Assinante {
         this.chamadas = new ArrayList<>();   // Cria uma lista de chamdas para cada assinante que for criado.
         this.numChamadas = 0;
     }
+
+    public long getCpf() {
+        return this.cpf;
+    }
+
+    @Override
+    public String toString() {
+        return "Assinante{"
+                + "cpf=" + cpf
+                + ", nome='" + nome + '\''
+                + ", numero=" + numero
+                + ", numChamadas=" + numChamadas
+                + '}';
+    }
 }

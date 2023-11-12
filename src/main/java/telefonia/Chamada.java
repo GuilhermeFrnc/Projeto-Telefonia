@@ -1,5 +1,6 @@
 package telefonia;
 
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
 public class Chamada {
@@ -12,5 +13,25 @@ public class Chamada {
         this.assinante = assinante;
         this.data = data;
         this.duracao = duracao;
+    }
+    
+    public GregorianCalendar getData() {
+        return this.data;
+    }
+
+    public int getDuracao() {
+        return this.duracao;
+    }
+
+    @Override
+    public String toString() {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyy");
+        String dataFormatada = formato.format(data.getTime());
+        return "Chmada{"
+                + "assinante=" + assinante
+                + ", data=" + dataFormatada
+                + ", duracao=" + duracao
+                + "}";
+
     }
 }

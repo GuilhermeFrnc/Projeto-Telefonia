@@ -38,18 +38,18 @@ public class Telefonia {
             case "pre":
 
                 if (numPrePagos < 10) {
-                    numPrePagos++;
                     assinante = new PrePago(cpf, nome, numero);
                     prePagos[numPrePagos] = assinante;
+                    numPrePagos++;
                 } else {
                     System.out.println("Infelizmente o PrePago esta cheio.");
                 }
                 break;
             case "pos":
                 if (numPosPagos < 10) {
-                    numPosPagos++;
                     assinante = new PosPago(cpf, nome, numero);
                     posPagos[numPosPagos] = assinante;
+                    numPosPagos++;
                 } else {
                     System.out.println("Infelizmente o PosPago esta cheio.");
                 }
@@ -63,22 +63,22 @@ public class Telefonia {
     public void listarAssinante() {
         System.out.println("Assinantes PosPagos:");
         for (int i = 0; i < numPosPagos; i++) {
-            System.out.println(i + " " + posPagos[i - 1]);
+            System.out.println(i + " " + posPagos[i]);
         }
 
         System.out.println("Assinantes PrePagos:");
         for (int i = 0; i < numPrePagos; i++) {
-            System.out.println(i + " " + prePagos[i - 1]);
+            System.out.println(i + " " + prePagos[i]);
         }
 
     }
-    
+
     public PosPago localizarPosPago(long cpf) {
-        
-        for (int i=0; i<numPosPagos;i++){
-            if(cpf == posPagos[i-1].getCpf()){
-                System.out.println(posPagos[i-1]);
-                return (PosPago) posPagos[i-1];
+
+        for (int i = 0; i < numPosPagos; i++) {
+            if (cpf == posPagos[i - 1].getCpf()) {
+                System.out.println(posPagos[i]);
+                return (PosPago) posPagos[i];
             }
         }
         return null; // retorna null se nenhum assinante com o CPF fornecido for encontrado
@@ -86,9 +86,9 @@ public class Telefonia {
 
     public PrePago localizarPrePago(long cpf) {
         for (int i = 0; i < numPrePagos; i++) {
-            if (cpf == prePagos[i-1].getCpf()) {
-                System.out.println(prePagos[i-1]);
-                return (PrePago)prePagos[i-1]; // retorna o assinante se o CPF corresponder
+            if (cpf == prePagos[i].getCpf()) {
+                System.out.println(prePagos[i]);
+                return (PrePago) prePagos[i]; // retorna o assinante se o CPF corresponder
             }
         }
         return null; // retorna null se nenhum assinante com o CPF fornecido for encontrado

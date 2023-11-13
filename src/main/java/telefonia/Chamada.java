@@ -14,7 +14,7 @@ public class Chamada {
         this.data = data;
         this.duracao = duracao;
     }
-    
+
     public GregorianCalendar getData() {
         return this.data;
     }

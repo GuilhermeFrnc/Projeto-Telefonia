@@ -40,7 +40,7 @@ public class Telefonia {
                 if (numPrePagos < 10) {
                     numPrePagos++;
                     assinante = new PrePago(cpf, nome, numero);
-                    prePagos[numPrePagos] = assinante;  
+                    prePagos[numPrePagos] = assinante;
                 } else {
                     System.out.println("Infelizmente o PrePago esta cheio.");
                 }
@@ -58,6 +58,19 @@ public class Telefonia {
                 System.out.println("Tipo de assinante inválido!");
                 break;
         }
+    }
+
+    public void listarAssinante() {
+        System.out.println("Assinantes PosPagos:");
+        for (int i = 0; i < numPosPagos; i++) {
+            System.out.println(i + " " + posPagos[i - 1]);
+        }
+
+        System.out.println("Assinantes PrePagos:");
+        for (int i = 0; i < numPrePagos; i++) {
+            System.out.println(i + " " + prePagos[i - 1]);
+        }
+
     }
 
 }

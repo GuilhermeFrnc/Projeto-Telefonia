@@ -94,4 +94,45 @@ public class Telefonia {
         return null; // retorna null se nenhum assinante com o CPF fornecido for encontrado
     }
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Boolean check = true;
+        Telefonia telefonia = new Telefonia();
+
+        while (check) {
+            System.out.println("""
+                                Menu Telefonia  
+                           -------------------------
+                           1- Cadastrar Assinante.
+                           2- Listar Assinantes.
+                           3- Fazer Chamada.
+                           4- Fazer Recarga.
+                           5- Imprimir Faturas.
+                           6- Sair do Programa.""");
+            int num = scanner.nextInt();
+
+            switch (num) {
+                case 1:
+                    telefonia.cadastrarAssinante();
+                    break;
+
+                case 2:
+                    telefonia.listarAssinante();
+                    break;
+                case 3:
+                    System.out.println("em preparo.");
+                    break;
+                case 4:
+                    System.out.println("em preparo.");
+                    break;
+                case 5:
+                    System.out.println("em preparo.");
+                    break;
+                case 6:
+                    check = false;
+                    break;
+            }
+        }
+    }
+
 }

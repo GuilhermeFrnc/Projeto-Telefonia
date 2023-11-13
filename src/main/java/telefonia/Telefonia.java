@@ -72,5 +72,26 @@ public class Telefonia {
         }
 
     }
+    
+    public PosPago localizarPosPago(long cpf) {
+        
+        for (int i=0; i<numPosPagos;i++){
+            if(cpf == posPagos[i-1].getCpf()){
+                System.out.println(posPagos[i-1]);
+                return (PosPago) posPagos[i-1];
+            }
+        }
+        return null; // retorna null se nenhum assinante com o CPF fornecido for encontrado
+    }
+
+    public PrePago localizarPrePago(long cpf) {
+        for (int i = 0; i < numPrePagos; i++) {
+            if (cpf == prePagos[i-1].getCpf()) {
+                System.out.println(prePagos[i-1]);
+                return (PrePago)prePagos[i-1]; // retorna o assinante se o CPF corresponder
+            }
+        }
+        return null; // retorna null se nenhum assinante com o CPF fornecido for encontrado
+    }
 
 }

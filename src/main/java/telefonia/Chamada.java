@@ -8,6 +8,7 @@ public class Chamada {
     private Assinante assinante;
     private GregorianCalendar data;
     private int duracao;
+	public Object getCustoChamada;
 
     public Chamada(Assinante assinante, GregorianCalendar data, int duracao) {
         this.assinante = assinante;
@@ -34,4 +35,11 @@ public class Chamada {
                 + "}";
 
     }
+
+	public Object getCustoChamada() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }

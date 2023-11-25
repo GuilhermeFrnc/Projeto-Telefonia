@@ -1,5 +1,6 @@
 package telefonia;
 
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Telefonia {
@@ -9,6 +10,8 @@ public class Telefonia {
     private Assinante[] prePagos;  // vetor para adicionar as informaçôes dos assinantes pre pagos.
     private Assinante[] posPagos;
     private Scanner scanner = new Scanner(System.in);
+	private Scanner scanner2;
+	private static Scanner scanner3;
 
     public Telefonia() {
 
@@ -94,8 +97,30 @@ public class Telefonia {
         return null; // retorna null se nenhum assinante com o CPF fornecido for encontrado
     }
 
+     public void fazerRecarga() {
+    	 scanner2 = new Scanner(System.in);
+    	 
+    	System.out.println("Digite o CPF do assinante pré-pago:");
+    	long cpf = scanner2.nextLong();
+    	PrePago assinantePrePago = localizarPrePago(cpf);
+    	
+    	if (assinantePrePago != null) {
+    		System.out.println("Foi encontrado o assinante, digite o valor da recarga: ");
+    		float valorRecarga = scanner2.nextFloat();
+    		
+    		GregorianCalendar dataRecarga = new GregorianCalendar();
+    		Recarga recarga = new Recarga (dataRecarga, valorRecarga);
+    		assinantePrePago.recarregar(recarga);
+    		
+    		System.out.println("Recarga realizada!");
+    	}
+    	else {
+    		System.out.println("Não foi possível encontrar o assinante. Recarga não realizada.");
+    	}
+     }
+    
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        scanner3 = new Scanner(System.in);
         Boolean check = true;
         Telefonia telefonia = new Telefonia();
 
@@ -109,7 +134,7 @@ public class Telefonia {
                            4- Fazer Recarga.
                            5- Imprimir Faturas.
                            6- Sair do Programa.""");
-            int num = scanner.nextInt();
+            int num = scanner3.nextInt();
 
             switch (num) {
                 case 1:

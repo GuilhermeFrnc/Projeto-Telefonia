@@ -100,11 +100,11 @@ public class Telefonia {
      public void fazerRecarga() {
     	 scanner2 = new Scanner(System.in);
     	 
-    	System.out.println("Digite o CPF do assinante pré-pago:");
+    	System.out.println("Digite o CPF do assinante pré-pago:"); // CPF deverá ser digitado e o Scanner irá buscar
     	long cpf = scanner2.nextLong();
     	PrePago assinantePrePago = localizarPrePago(cpf);
     	
-    	if (assinantePrePago != null) {
+    	if (assinantePrePago != null) { //Caso encontre o CPF, irá exibir a mensagem pedindo o valor da recarga
     		System.out.println("Foi encontrado o assinante, digite o valor da recarga: ");
     		float valorRecarga = scanner2.nextFloat();
     		

@@ -14,10 +14,10 @@ public class Recarga {
 		this.data = data;
 		this.valor = valor;
 	}
-		public GregorianCalendar getData() {
+		public GregorianCalendar getData() { //Pegando a data e retornando
 			return data;
 		}
-		public float getValor() {
+		public float getValor() { //Pegando o valor da recarga e retornando
 			return valor;
 		}
 		

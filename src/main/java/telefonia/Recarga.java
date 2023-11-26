@@ -5,14 +5,14 @@ import java.util.GregorianCalendar;
 
 
 public class Recarga {
-    // Adicionar os atributos e métodos dessa Classe.
+    // Classe para a recarga telefonica.
 private GregorianCalendar data;
 private float valor;
 
 //Criando o Construtor para a classe
 public Recarga(GregorianCalendar data, float valor) {
 this.data = data;
-this.valor = valor;
+this.valor = valor; 
 }
 public GregorianCalendar getData() { //Pegando a data e retornando.
 return data;

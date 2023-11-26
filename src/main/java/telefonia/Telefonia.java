@@ -96,7 +96,7 @@ public class Telefonia {
         return null; // retorna null se nenhum assinante com o CPF fornecido for encontrado
     }
     
-    public void fazerRecarga() {
+    public void fazerRecarga() { // Scanner para verificar o assinante
         scanner = new Scanner(System.in);
        
         System.out.println("Digite o CPF do assinante pré-pago:"); // CPF deverá ser digitado e o Scanner irá buscar

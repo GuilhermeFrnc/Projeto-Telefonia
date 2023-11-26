@@ -49,7 +49,7 @@ public class Telefonia {
                 break;
             case "pos":
                 if (numPosPagos < 10) {
-                    assinante = new PosPago(cpf, nome, numero);
+                    assinante = new PosPago(cpf, nome, numero, cpf, numero);
                     posPagos[numPosPagos] = assinante;
                     numPosPagos++;
                 } else {
@@ -121,7 +121,7 @@ public class Telefonia {
     public static void main(String[] args) {
         scanner2 = new Scanner(System.in);
         Boolean check = true;
-        Telefonia telefonia = new Telefonia();
+        Telefonia telefonia = new Telefonia(0, 0);
 
         while (check) {
             System.out.println("""

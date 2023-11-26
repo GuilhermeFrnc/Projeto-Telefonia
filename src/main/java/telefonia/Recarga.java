@@ -5,7 +5,8 @@ import java.util.GregorianCalendar;
 
 
 public class Recarga {
-    // Classe para a recarga telefonica.
+	
+	
 private GregorianCalendar data;
 private float valor;
 
@@ -14,11 +15,11 @@ public Recarga(GregorianCalendar data, float valor) {
 this.data = data;
 this.valor = valor; 
 }
-public GregorianCalendar getData() { //Pegando a data e retornando.
+public GregorianCalendar getData() { // Retornando o Valor e a Data da Recarga.
 return data;
 }
-public float getValor() { //Pegando o valor da recarga e retornando o mesmo.
-return valor;
+public float getValor() { 
+	return valor;
 }
 
 public String toString() {

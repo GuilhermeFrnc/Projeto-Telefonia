@@ -13,4 +13,9 @@ public class PrePago extends Assinante {
         super(cpf, nome, numero);
         this.recargas = new ArrayList<>();  // Cria uma lista para cada assinante que for iniciado na classe PrePago.
     }
+
+	public void recarregar(Recarga recarga) {
+		// TODO Auto-generated method stub
+		
+	}
 }

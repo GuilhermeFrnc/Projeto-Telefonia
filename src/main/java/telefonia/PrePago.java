@@ -54,7 +54,7 @@ public class PrePago extends Assinante {
             float valorRecarga = recargas[i].getValor();
 
             if (mesDaRecarga == mes && anoDaRecarga == ano) {
-                System.out.println(recargas[i] + ", valor=" + valorRecarga);
+                System.out.println(recargas[i]);
                 totalRecargas += valorRecarga;
             }
         }

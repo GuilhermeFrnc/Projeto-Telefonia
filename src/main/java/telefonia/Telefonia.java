@@ -109,7 +109,7 @@ public class Telefonia {
        
         GregorianCalendar dataRecarga = new GregorianCalendar();
         Recarga recarga = new Recarga (dataRecarga, valorRecarga);
-        assinantePrePago.recarregar(recarga);
+        assinantePrePago.recarregar(recarga); // Salva a data da recarga e efetua a recarga logo após
        
         System.out.println("Recarga realizada!");
         }

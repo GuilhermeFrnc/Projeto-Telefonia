@@ -24,7 +24,7 @@ return valor;
 public String toString() {
 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); // Formatando a data de uma maneira especificada (dia/mês/ano)
 String formattedDate = dateFormat.format(data.getTime());
-return "Data: " + formattedDate + ", Valor R$" + valor;
+return "Data: " + formattedDate + ", Valor R$" + valor; // Retorna a data formata e o valor recarregado.
 
 }
 }

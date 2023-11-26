@@ -20,7 +20,7 @@ public class PrePago extends Assinante {
 			
 			recargas[numRecargas] = valor;
 			
-			numRecargas++;
+			numRecargas++;           // Atualiza o número de recargas e os créditos a partir do valor
 			credito += valor;
 			
 			System.out.println("Recarga acaba de ser registrada!");

@@ -3,5 +3,5 @@
 Atividade de POO com JAVA.
 
 Nome dos envolvidos no projeto:
-Guilherme Franco de Oliveira
+Guilherme Franco de Oliveira, 
 Nicolas de Souza Trindade

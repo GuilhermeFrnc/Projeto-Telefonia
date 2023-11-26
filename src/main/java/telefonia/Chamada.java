@@ -27,11 +27,7 @@ public class Chamada {
     public String toString() {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyy");
         String dataFormatada = formato.format(data.getTime());
-        return "Chmada{"
-                + "assinante=" + assinante
-                + ", data=" + dataFormatada
-                + ", duracao=" + duracao
-                + "}";
-
+        return ", data=" + dataFormatada
+                + ", duracao=" + duracao;
     }
 }

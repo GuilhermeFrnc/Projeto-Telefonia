@@ -1,20 +1,18 @@
 package telefonia;
 
-import java.util.ArrayList;
-
 public class Assinante {
 
     private long cpf;
     private String nome;
-    private int numero;
-    protected ArrayList<Chamada> chamadas;    // Lista para adicionar o registro das chamadas feitas.
+    private long numero;
+    protected Chamada[] chamadas;    // Lista para adicionar o registro das chamadas feitas.
     protected int numChamadas;    // contador.
 
-    public Assinante(long cpf, String nome, int numero) {
+    public Assinante(long cpf, String nome, long numero) {
         this.cpf = cpf;
         this.nome = nome;
         this.numero = numero;
-        this.chamadas = new ArrayList<>();   // Cria uma lista de chamdas para cada assinante que for criado.
+        this.chamadas = new Chamada[10];   // Cria uma lista de chamdas para cada assinante que for criado, com o limite de 10 chamadas.
         this.numChamadas = 0;
     }
 
@@ -24,11 +22,9 @@ public class Assinante {
 
     @Override
     public String toString() {
-        return "Assinante{"
-                + "cpf=" + cpf
-                + ", nome='" + nome + '\''
+        return "Nome assinante= " + nome
+                + ", cpf=" + cpf
                 + ", numero=" + numero
-                + ", numChamadas=" + numChamadas
-                + '}';
+                + ", numChamadas=" + numChamadas;
     }
 }

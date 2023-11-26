@@ -1,5 +1,6 @@
 package telefonia;
 
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Telefonia {
@@ -30,7 +31,7 @@ public class Telefonia {
         String nome = scanner.next();
 
         System.out.println("Digite o seu número de telefone:");
-        int numero = scanner.nextInt();
+        long numero = scanner.nextLong();
 
         Assinante assinante;    // cria um objeto do tipo Assinante. 
 
@@ -76,22 +77,92 @@ public class Telefonia {
     public PosPago localizarPosPago(long cpf) {
 
         for (int i = 0; i < numPosPagos; i++) {
-            if (cpf == posPagos[i - 1].getCpf()) {
-                System.out.println(posPagos[i]);
+            if (cpf == posPagos[i].getCpf()) {
                 return (PosPago) posPagos[i];
             }
         }
-        return null; // retorna null se nenhum assinante com o CPF fornecido for encontrado
+        return null; // retorna null se nenhum assinante com o CPF fornecido foi encontrado
     }
 
     public PrePago localizarPrePago(long cpf) {
         for (int i = 0; i < numPrePagos; i++) {
             if (cpf == prePagos[i].getCpf()) {
-                System.out.println(prePagos[i]);
                 return (PrePago) prePagos[i]; // retorna o assinante se o CPF corresponder
             }
         }
         return null; // retorna null se nenhum assinante com o CPF fornecido for encontrado
+    }
+
+    public void fazerChamada() {
+        System.out.println("Digite o tipo de assinante pre-pago(pre) ou pos-pago(pos):");
+        String tipo = scanner.next();
+
+        System.out.println("Digite o seu cpf:");
+        long cpf = scanner.nextLong();
+
+        if ("pre".equals(tipo)) {
+            PrePago acharAssinante = localizarPrePago(cpf);
+            if (acharAssinante == null) {
+                System.out.println("Esse assinate nao foi encontrado.");
+            } else {
+                GregorianCalendar data = new GregorianCalendar();
+
+                System.out.println("Digite a duração (em minutos) da chamada:");
+                int duracao = scanner.nextInt();
+
+                float retorno = acharAssinante.fazerChamada(data, duracao); // manda o assinate encontrado para o método fazerChamada da class PrePago.
+
+                if (retorno == 0) {
+                    System.out.println("Chamada efetuada com sucesso!");
+                } else if (retorno == 1) {
+                    System.out.println("O assinante não possui créditos suficientes.");
+                } else {
+                    System.out.println("O vetor de chamadas já está cheio.");
+                }
+            }
+
+        } else if ("pos".equals(tipo)) {
+            PosPago acharAssinante = localizarPosPago(cpf);
+            if (acharAssinante == null) {
+                System.out.println("Esse assinate nao foi encontrado.");
+            } else {
+                GregorianCalendar data = new GregorianCalendar();
+
+                System.out.println("Digite a duração (em minutos) da chamada:");
+                int duracao = scanner.nextInt();
+
+                acharAssinante.fazerChamada(data, duracao);
+            }
+        } else {
+            System.out.println("O tipo de assinate inserido nao existe!");
+        }
+    }
+
+    public void imprimirFatura() {
+        System.out.println("Digite o ano(yyyy) que você deseja imprimir a fatura:");
+        int ano = scanner.nextInt();
+        System.out.println("Digite o mês(MM) que você deseja imprimir a fatura:");
+        int mes = scanner.nextInt();
+
+        for (int i = 0; i < numPrePagos; i++) {
+            System.out.println("PRE PAGOS:");
+            if (prePagos[i] != null) {
+                long cpf = prePagos[i].getCpf();
+                PrePago assinante = localizarPrePago(cpf);
+                System.out.println(prePagos[i].toString());
+                assinante.imprimirFatura(mes, ano);
+            }
+        }
+
+        for (int i = 0; i < numPosPagos; i++) {
+            System.out.println("POS PAGOS:");
+            if (posPagos[i] != null) {
+                long cpf = posPagos[i].getCpf();
+                PosPago assinante = localizarPosPago(cpf);
+                System.out.println(posPagos[i].toString());
+                assinante.imprimirFatura(mes, ano);
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -120,13 +191,13 @@ public class Telefonia {
                     telefonia.listarAssinante();
                     break;
                 case 3:
-                    System.out.println("em preparo.");
+                    telefonia.fazerChamada();
                     break;
                 case 4:
-                    System.out.println("em preparo.");
+                    telefonia.fazerRecarga();
                     break;
                 case 5:
-                    System.out.println("em preparo.");
+                    telefonia.imprimirFatura();
                     break;
                 case 6:
                     check = false;

@@ -1,13 +1,12 @@
 package telefonia;
 
+import java.util.GregorianCalendar;
 
 public class PosPago extends Assinante {
 
-    private float creditos;
-    private int numRecargas;
+    private float assinatura = 0;
 
-    public PosPago(long cpf, String nome, int numero) {
+    public PosPago(long cpf, String nome, long numero) {
         super(cpf, nome, numero);
     }
-
 }

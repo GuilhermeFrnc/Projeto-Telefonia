@@ -1,5 +1,15 @@
 package telefonia;
 
+import java.util.GregorianCalendar;
+
 public class Recarga {
-    // Adicionar os atributos e métodos dessa Classe.
+
+    private GregorianCalendar data;
+    private float valor;
+
+//Criando o Construtor para a classe
+    public Recarga(GregorianCalendar data, float valor) {
+        this.data = data;
+        this.valor = valor;
+    }
 }
